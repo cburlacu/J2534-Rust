@@ -297,6 +297,7 @@ pub enum ConnectFlags {
     CAN_ID_BOTH = 0x00000800,
     ISO15765_ADDR_TYPE = 0x00000080,
     ISO9141_K_LINE_ONLY = 0x00001000,
+    SNIFF_MODE = 0x10000000,
 }
 impl Loggable for ConnectFlags {
     fn to_string(&self) -> &str {
@@ -305,7 +306,8 @@ impl Loggable for ConnectFlags {
             ConnectFlags::ISO9141_NO_CHECKSUM => "ISO9141 no checksum",
             ConnectFlags::CAN_ID_BOTH => "unknown",
             ConnectFlags::ISO15765_ADDR_TYPE => "ISO-TP Extended addressing",
-            ConnectFlags::ISO9141_K_LINE_ONLY => "ISO9141 only use K-Line"
+            ConnectFlags::ISO9141_K_LINE_ONLY => "ISO9141 only use K-Line",
+            ConnectFlags::SNIFF_MODE => "Tactrix: listens to a bus without ack"
         }
     }
 }
